@@ -23,6 +23,7 @@
 #include <cctype>
 #include <string>
 #include <clocale>
+#include <cstdlib>
 #include <cstring>
 #include <cassert>
 #if !defined(_WIN32)
