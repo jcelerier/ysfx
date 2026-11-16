@@ -91,6 +91,8 @@ static EEL_F NSEEL_CGEN_CALL ysfx_api_slider_automate(void *opaque, INT_PTR npar
 
     fx->slider.automate_mask[group] |= mask;
     fx->slider.change_mask[group] |= mask;
+    if (ysfx_get_thread_id() == ysfx_thread_id_gfx)
+        fx->slider.gfx_edit_mask[group] |= mask;
 
     if (nparms > 1) {
         if (ysfx_eel_round<int32_t>(parms[1][0])) {
@@ -128,6 +130,8 @@ static EEL_F NSEEL_CGEN_CALL ysfx_api_sliderchange(void *opaque, EEL_F *mask_or_
     }
 
     fx->slider.change_mask[group] |= mask;
+    if (ysfx_get_thread_id() == ysfx_thread_id_gfx)
+        fx->slider.gfx_edit_mask[group] |= mask;
     return 0;
 }
 

@@ -76,6 +76,7 @@ ysfx_fetch_slider_group_index
 ysfx_slider_mask
 ysfx_fetch_slider_changes
 ysfx_fetch_slider_automations
+ysfx_fetch_slider_gfx_edits
 ysfx_fetch_slider_touches
 ysfx_get_slider_visibility
 ysfx_fetch_want_undopoint

@@ -342,6 +342,10 @@ YSFX_API uint64_t ysfx_slider_mask(uint32_t slider_number, uint8_t group_index);
 YSFX_API uint64_t ysfx_fetch_slider_changes(ysfx_t *fx, uint8_t slider_group_index);
 // get a bit mask of sliders whose values must be automated, and clear it to zero
 YSFX_API uint64_t ysfx_fetch_slider_automations(ysfx_t *fx, uint8_t slider_group_index);
+// get a bit mask of sliders that @gfx flagged with `slider_automate` or `sliderchange`, and clear it to zero
+// (they are also in the masks above, which @init, @slider, @block and @sample set as well)
+#define YSFX_HAS_FETCH_SLIDER_GFX_EDITS 1
+YSFX_API uint64_t ysfx_fetch_slider_gfx_edits(ysfx_t *fx, uint8_t slider_group_index);
 // get a bit mask of sliders whose values are currently being touched
 YSFX_API uint64_t ysfx_fetch_slider_touches(ysfx_t *fx, uint8_t slider_group_index);
 // get a bit mask of sliders currently visible

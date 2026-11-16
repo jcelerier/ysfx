@@ -156,6 +156,8 @@ struct ysfx_s {
         ysfx::sync_bitset64 change_mask[ysfx_max_slider_groups];
         ysfx::sync_bitset64 visible_mask[ysfx_max_slider_groups];
         ysfx::sync_bitset64 touch_mask[ysfx_max_slider_groups];
+        // sliders that `slider_automate` or `sliderchange` flagged from @gfx
+        ysfx::sync_bitset64 gfx_edit_mask[ysfx_max_slider_groups];
     } slider;
 
     // Triggers

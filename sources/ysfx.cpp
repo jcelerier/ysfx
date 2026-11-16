@@ -1330,6 +1330,7 @@ void ysfx_first_init(ysfx_t *fx)
         fx->slider.automate_mask[i].store(0);
         fx->slider.change_mask[i].store(0);
         fx->slider.touch_mask[i].store(0);
+        fx->slider.gfx_edit_mask[i].store(0);
     }
     ysfx_update_slider_visibility_mask(fx);
 }
@@ -1456,6 +1457,11 @@ uint64_t ysfx_fetch_slider_changes(ysfx_t *fx, uint8_t slider_group_index)
 uint64_t ysfx_fetch_slider_automations(ysfx_t *fx, uint8_t slider_group_index)
 {
     return fx->slider.automate_mask[slider_group_index].exchange(0);
+}
+
+uint64_t ysfx_fetch_slider_gfx_edits(ysfx_t *fx, uint8_t slider_group_index)
+{
+    return fx->slider.gfx_edit_mask[slider_group_index].exchange(0);
 }
 
 bool ysfx_fetch_want_undopoint(ysfx_t *fx)
